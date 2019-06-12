@@ -16,7 +16,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class MainActivity extends AppCompatActivity {
+public class EasyActivity extends AppCompatActivity {
     private String answerWord; //Correct answer string
     private String guessWord; //User guess string
     private int remainingGuesses; //Amount of failed user guesses before failure.
@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_easy);
         readFromWordlist();
         startGame();
         defineButtons();
@@ -302,7 +302,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void readFromWordlist(){
         try {
-            InputStream inputStream = getResources().openRawResource(R.raw.wordlist_2);
+            InputStream inputStream = getResources().openRawResource(R.raw.easy);
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
             String eachline = bufferedReader.readLine();
             while (eachline != null) {
@@ -351,3 +351,4 @@ public class MainActivity extends AppCompatActivity {
         return newGuessString;
     }
 }
+
